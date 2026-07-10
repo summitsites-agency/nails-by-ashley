@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nails by Ashley — Editorial Nail Artistry</title>
+  <meta name="description" content="Sculpted sets, chrome finishes and hand-painted nail art from Ashley Rivera. An editorial nail studio in the Arts District, Los Angeles." />
+  <link rel="icon" type="image/svg+xml" href="public/mark.svg" />
+
+  <!-- Fonts: editorial serif + tight grotesk + mono for labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Three.js (vanilla, no build) resolved from a pinned CDN -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADER — a curtain with the wordmark that lifts after ~1.8s
+       ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <span class="loader__line"><span>Nails</span></span>
+      <span class="loader__line loader__line--italic"><span>by Ashley</span></span>
+    </div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- ============================================================
+       NAV — fixed, transparent over the hero
+       ============================================================ -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Nails by Ashley — home">
+      <img src="public/mark.svg" alt="" class="nav__mark" width="22" height="22" />
+      <span>Nails <em>by</em> Ashley</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#studio">Studio</a>
+    </nav>
+    <a href="#book" class="btn btn--pill nav__cta">Book now <span aria-hidden="true">→</span></a>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO — full-bleed cinematic video + oversized headline
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+        <source src="public/home.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__scrim"></div>
+
+      <div class="hero__inner">
+        <p class="eyebrow eyebrow--light reveal">
+          <span class="eyebrow__dot"></span> Nail studio — Arts District, LA
+        </p>
+
+        <h1 class="hero__title">
+          <span class="line-mask"><span class="line" style="--d:.05s">Nails</span></span>
+          <span class="line-mask"><span class="line" style="--d:.14s">as</span></span>
+          <span class="line-mask"><span class="line display-italic" style="--d:.23s">editorial.</span></span>
+        </h1>
+
+        <p class="hero__sub reveal" data-delay="0.5">
+          Sculpted sets, chrome finishes and hand-painted art for people who
+          treat ten nails like a runway.
+        </p>
+
+        <div class="hero__actions reveal" data-delay="0.65">
+          <a href="#book" class="btn btn--solid">Book an appointment <span aria-hidden="true">→</span></a>
+          <a href="#work" class="btn btn--ghost-light">View the work</a>
+        </div>
+      </div>
+
+      <!-- spinning editorial badge -->
+      <a href="#book" class="hero__badge" aria-label="Book — established 2014">
+        <svg viewBox="0 0 100 100" class="hero__badge-ring">
+          <defs>
+            <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+          </defs>
+          <text><textPath href="#circlePath">BOOK YOUR SEAT · NAILS BY ASHLEY · EST 2014 · </textPath></text>
+        </svg>
+        <span class="hero__badge-core" aria-hidden="true">→</span>
+      </a>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <i></i>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE — seamless scrolling keyword band
+         ============================================================ -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Gel</span><b>✦</b><span>Acrylic</span><b>✦</b><span>Nail Art</span><b>✦</b>
+          <span>Structured Gel</span><b>✦</b><span>Chrome</span><b>✦</b><span>French</span><b>✦</b>
+          <span>Ombré</span><b>✦</b><span>Hand-Painted</span><b>✦</b>
+        </div>
+        <div class="marquee__group">
+          <span>Gel</span><b>✦</b><span>Acrylic</span><b>✦</b><span>Nail Art</span><b>✦</b>
+          <span>Structured Gel</span><b>✦</b><span>Chrome</span><b>✦</b><span>French</span><b>✦</b>
+          <span>Ombré</span><b>✦</b><span>Hand-Painted</span><b>✦</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES — asymmetric bento with prices + spotlight hover
+         ============================================================ -->
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> The Menu</p>
+        <h2 class="section-title reveal" data-delay="0.08">
+          Services priced for<br /><span class="display-italic">the obsessed.</span>
+        </h2>
+        <p class="section-lead reveal" data-delay="0.16">
+          Every set starts with a consultation and a soak, and ends with a finish
+          that photographs as well as it wears.
+        </p>
+      </div>
+
+      <div class="bento" id="bento">
+        <article class="card card--lg" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">01</span>
+            <span class="card__price">$65</span>
+          </div>
+          <h3 class="card__title">Signature Gel Manicure</h3>
+          <p class="card__desc">Shape, cuticle work and a flawless gel color that
+            lasts three-plus weeks without a chip.</p>
+          <ul class="card__tags"><li>Gel</li><li>90 min</li></ul>
+        </article>
+
+        <article class="card card--acid" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">02</span>
+            <span class="card__price">$85</span>
+          </div>
+          <h3 class="card__title">Structured Gel Overlay</h3>
+          <p class="card__desc">Strength where you need it — a sculpted apex that
+            protects natural nails.</p>
+          <ul class="card__tags"><li>Builder</li><li>2 hr</li></ul>
+        </article>
+
+        <article class="card" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">03</span>
+            <span class="card__price">$95</span>
+          </div>
+          <h3 class="card__title">Sculptured Acrylic Set</h3>
+          <p class="card__desc">Any length, any shape, hand-sculpted from scratch.</p>
+          <ul class="card__tags"><li>Acrylic</li><li>2.5 hr</li></ul>
+        </article>
+
+        <article class="card" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">04</span>
+            <span class="card__price">$12<small>/nail</small></span>
+          </div>
+          <h3 class="card__title">Custom Nail Art</h3>
+          <p class="card__desc">Chrome, aura, freehand line-work — priced per nail.</p>
+          <ul class="card__tags"><li>Art</li><li>Add-on</li></ul>
+        </article>
+
+        <article class="card card--dark" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">05</span>
+            <span class="card__price">$75</span>
+          </div>
+          <h3 class="card__title">Luxury Pedicure</h3>
+          <p class="card__desc">A 60-minute ritual — soak, scrub, massage and gel
+            to finish.</p>
+          <ul class="card__tags"><li>Pedi</li><li>60 min</li></ul>
+        </article>
+
+        <article class="card" data-spotlight>
+          <div class="card__top">
+            <span class="card__no">06</span>
+            <span class="card__price">$30</span>
+          </div>
+          <h3 class="card__title">Soak-Off &amp; Reset</h3>
+          <p class="card__desc">Gentle removal and a nourishing reset between sets.</p>
+          <ul class="card__tags"><li>Care</li><li>45 min</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LACQUER BAR — the Three.js 3D centerpiece
+         ============================================================ -->
+    <section class="lacquer" id="lacquer">
+      <canvas class="lacquer__canvas" id="scene"></canvas>
+      <div class="lacquer__overlay">
+        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__dot"></span> The Lacquer Bar</p>
+        <h2 class="lacquer__title reveal" data-delay="0.08">
+          A finish for<br /><span class="display-italic">every mood.</span>
+        </h2>
+        <p class="lacquer__sub reveal" data-delay="0.16">
+          Two hundred shades on the wall and a custom mixing bar — from milky
+          jelly to mirror chrome.
+        </p>
+        <ul class="chips reveal" data-delay="0.24">
+          <li>Chrome</li><li>Glazed</li><li>Jelly</li><li>Matte</li><li>Cat-Eye</li>
+        </ul>
+      </div>
+      <noscript><div class="lacquer__fallback">Enable JavaScript to view the 3D lacquer bar.</div></noscript>
+    </section>
+
+    <!-- ============================================================
+         WORK — portfolio gallery (showcase videos + labelled tiles)
+         ============================================================ -->
+    <section class="work" id="work">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Selected Work</p>
+          <h2 class="section-title reveal" data-delay="0.08">The<br /><span class="display-italic">portfolio.</span></h2>
+        </div>
+        <p class="section-lead reveal" data-delay="0.16">
+          A rotating look at recent sets — shot in-studio, unretouched. Real nails,
+          real wear, real shine.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <figure class="tile tile--tall reveal">
+          <video class="tile__media" autoplay muted loop playsinline preload="none">
+            <source src="public/showcase%201.mp4" type="video/mp4" />
+          </video>
+          <figcaption><span class="tile__idx">01</span> Chrome French</figcaption>
+        </figure>
+
+        <figure class="tile tile--swatch tile--rose reveal" data-delay="0.06">
+          <span class="tile__swatch-label">Aura Ombré</span>
+          <figcaption><span class="tile__idx">02</span> Blush aura fade</figcaption>
+        </figure>
+
+        <figure class="tile tile--swatch tile--acid reveal" data-delay="0.12">
+          <span class="tile__swatch-label">Neon Tips</span>
+          <figcaption><span class="tile__idx">03</span> Acid micro-french</figcaption>
+        </figure>
+
+        <figure class="tile tile--tall reveal" data-delay="0.06">
+          <video class="tile__media" autoplay muted loop playsinline preload="none">
+            <source src="public/showcase%202.mp4" type="video/mp4" />
+          </video>
+          <figcaption><span class="tile__idx">04</span> Sculpted Almond</figcaption>
+        </figure>
+
+        <figure class="tile tile--swatch tile--ox reveal" data-delay="0.12">
+          <span class="tile__swatch-label">Oxblood Gloss</span>
+          <figcaption><span class="tile__idx">05</span> High-shine red</figcaption>
+        </figure>
+
+        <figure class="tile tile--swatch tile--ink reveal" data-delay="0.18">
+          <span class="tile__swatch-label">Hand-Painted</span>
+          <figcaption><span class="tile__idx">06</span> Freehand line-work</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STUDIO / ABOUT — bio + stats
+         ============================================================ -->
+    <section class="studio" id="studio">
+      <div class="studio__grid">
+        <div class="studio__media reveal">
+          <div class="studio__portrait">
+            <span class="studio__portrait-label">Ashley Rivera</span>
+          </div>
+          <div class="studio__sig display-italic">Ashley</div>
+        </div>
+
+        <div class="studio__copy">
+          <p class="eyebrow reveal"><span class="eyebrow__dot"></span> The Studio</p>
+          <h2 class="section-title reveal" data-delay="0.08">
+            Ten years of<br /><span class="display-italic">tiny masterpieces.</span>
+          </h2>
+          <p class="studio__text reveal" data-delay="0.16">
+            Ashley Rivera is a licensed nail artist who treats the nail like a
+            canvas and the appointment like a ritual. Trained in structured gel and
+            sculptured acrylic, she's spent a decade building sets that hold up on
+            set, on stage and on the school run.
+          </p>
+          <p class="studio__text reveal" data-delay="0.22">
+            The studio is one chair, by appointment only — no rush, no assembly line.
+            Just you, the color wall, and however long it takes to get it right.
+          </p>
+
+          <dl class="stats reveal" data-delay="0.3">
+            <div><dt>Years</dt><dd data-count="12">12</dd></div>
+            <div><dt>Sets shaped</dt><dd data-count="8000">8k+</dd></div>
+            <div><dt>Editorial features</dt><dd data-count="40">40+</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS — client quotes as a marquee of cards
+         ============================================================ -->
+    <section class="quotes">
+      <div class="section-head">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Kind Words</p>
+        <h2 class="section-title reveal" data-delay="0.08">Loved by<br /><span class="display-italic">the front row.</span></h2>
+      </div>
+
+      <div class="quotes__track marquee-hoverable">
+        <div class="quotes__group">
+          <blockquote class="quote"><p>"Three weeks later and not a single chip. Ashley is the only person I trust with my hands."</p><cite>— Marisol V.</cite></blockquote>
+          <blockquote class="quote"><p>"The chrome work is unreal. People stop me in the street to ask who did my nails."</p><cite>— Deja P.</cite></blockquote>
+          <blockquote class="quote"><p>"It feels less like an appointment and more like therapy with a flawless finish."</p><cite>— Priya N.</cite></blockquote>
+          <blockquote class="quote"><p>"Booked her for a shoot, now she does my nails every month. Absolute artist."</p><cite>— Renée K.</cite></blockquote>
+        </div>
+        <div class="quotes__group" aria-hidden="true">
+          <blockquote class="quote"><p>"Three weeks later and not a single chip. Ashley is the only person I trust with my hands."</p><cite>— Marisol V.</cite></blockquote>
+          <blockquote class="quote"><p>"The chrome work is unreal. People stop me in the street to ask who did my nails."</p><cite>— Deja P.</cite></blockquote>
+          <blockquote class="quote"><p>"It feels less like an appointment and more like therapy with a flawless finish."</p><cite>— Priya N.</cite></blockquote>
+          <blockquote class="quote"><p>"Booked her for a shoot, now she does my nails every month. Absolute artist."</p><cite>— Renée K.</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOOK — hours, location, CTA
+         ============================================================ -->
+    <section class="book" id="book">
+      <div class="book__grid">
+        <div class="book__lead">
+          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__dot"></span> Reservations</p>
+          <h2 class="book__title reveal" data-delay="0.08">
+            Book your<br /><span class="display-italic">seat.</span>
+          </h2>
+          <p class="book__text reveal" data-delay="0.16">
+            One chair, by appointment. Secure your slot and tell Ashley what you
+            have in mind — bring a reference or leave it to the artist.
+          </p>
+          <a href="mailto:hello@nailsbyashley.studio?subject=Booking%20request" class="btn btn--solid btn--big reveal" data-delay="0.24">
+            Request an appointment <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="book__info reveal" data-delay="0.16">
+          <div class="info-row">
+            <span class="info-row__k">Hours</span>
+            <span class="info-row__v">
+              Tue – Sat · 10–6<br />
+              Sun · 11–4<br />
+              Mon · Closed
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__k">Studio</span>
+            <span class="info-row__v">Studio 07, Arts District<br />Los Angeles, CA</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__k">Contact</span>
+            <span class="info-row__v">
+              <a href="mailto:hello@nailsbyashley.studio">hello@nailsbyashley.studio</a><br />
+              <a href="tel:+13235550117">(323) 555-0117</a>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__k">Social</span>
+            <span class="info-row__v"><a href="#">@nailsbyashley</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER — giant outlined wordmark
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <p class="footer__blurb">Editorial nail artistry,<br />Arts District, Los Angeles.</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#book">Book</a>
+      </nav>
+    </div>
+    <div class="footer__wordmark" aria-hidden="true">Ashley</div>
+    <div class="footer__base">
+      <span>© 2026 Nails by Ashley</span>
+      <span>Made with a steady hand.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

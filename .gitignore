@@ -1,0 +1,14 @@
+# dependencies (in case a build step is added later)
+node_modules/
+dist/
+
+# local env
+.env
+.env.local
+
+# logs / os / editor
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

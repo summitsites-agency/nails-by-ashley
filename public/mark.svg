@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#4B0D1A"/>
+  <!-- an almond nail / lacquer drop -->
+  <path d="M16 5c3.6 3.9 5.8 7.6 5.8 11.1A5.8 5.8 0 0 1 16 22a5.8 5.8 0 0 1-5.8-5.9C10.2 12.6 12.4 8.9 16 5Z" fill="#D9FF3D"/>
+  <path d="M16 5c3.6 3.9 5.8 7.6 5.8 11.1A5.8 5.8 0 0 1 16 22c2-1.2 3.2-3.3 3.2-6C19.2 12.3 17.8 8.6 16 5Z" fill="#B8D92e"/>
+  <ellipse cx="13.9" cy="12.4" rx="1.15" ry="1.9" transform="rotate(-20 13.9 12.4)" fill="#F2ECE0" opacity="0.85"/>
+  <circle cx="16" cy="25.4" r="1.25" fill="#E9C4C0"/>
+</svg>
